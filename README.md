@@ -5,5 +5,5 @@ Run:
 2.http://localhost:8080/api/createPets
 (order is not important)
 
- this methods populate the database,so that the Buy and
+ these methods populate the database,so that the Buy and
  History-log methods can work properly
