@@ -12,14 +12,14 @@ import java.time.Period;
 
 @Data
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // Stores pet as a single table
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class,
         property = "owner")
 public class Pet {
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonManagedReference
-    private User owner;
+    @JsonManagedReference    // it's a forward reference
+    private User owner;      // because pet and owner are bidirectional
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long petId;

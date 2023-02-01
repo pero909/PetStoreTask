@@ -36,7 +36,7 @@ public class PetStoreRestController {
     }
 
 
-    //Creates users with Random names and emails
+    //Creates 10 users with Random names and emails
     @GetMapping("/createUsers")
     private List<User> createUsers(){
         List<User> users =  new ArrayList<>();
@@ -58,6 +58,8 @@ public class PetStoreRestController {
      public void deleteUsers(){
         this.userServiceImp.deleteAllUsers();
     }
+
+    //Lists all the users int the database
     @GetMapping("/listUsers")
     private List<User> listUsers(){
         return this.userServiceImp.listAll();
@@ -127,11 +129,14 @@ public class PetStoreRestController {
         }
         return this.petServiceImp.listAll();
     }
+
+    //Deletes all Pets (for postgres testing locally)
     @GetMapping("/deleteAllPets")
     public void deletePets(){
         this.petServiceImp.deleteAllPets();
     }
 
+    //Lists all Pets in the database
     @GetMapping("/listPets")
      private List<Pet> listPets(){
         return this.petServiceImp.listAll();

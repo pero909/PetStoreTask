@@ -24,8 +24,8 @@ public class User {
 
     private Double budget;
     @OneToMany(fetch = FetchType.EAGER,mappedBy = "owner")
-    @JsonBackReference
-    private List<Pet> pets;
+    @JsonBackReference         // it's a backrefrence
+    private List<Pet> pets;    // because pet and owner are bidirectional
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -11,7 +11,8 @@ import java.time.Period;
 @Entity
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "owner")
+        property = "owner") //So it can show owner as an object
+                           //otherwise it shows an error
 public class Dog extends Pet {
     private Integer  rating;
 
