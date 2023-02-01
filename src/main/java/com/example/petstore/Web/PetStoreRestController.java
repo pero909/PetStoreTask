@@ -35,6 +35,8 @@ public class PetStoreRestController {
         return this.userServiceImp.listAll();
     }
 
+
+    //Creates users with Random names and emails
     @GetMapping("/createUsers")
     private List<User> createUsers(){
         List<User> users =  new ArrayList<>();
@@ -51,6 +53,7 @@ public class PetStoreRestController {
         }
         return users;
     }
+    //Deletes all users (for postgres testing locally)
     @GetMapping("/deleteAllUsers")
      public void deleteUsers(){
         this.userServiceImp.deleteAllUsers();
@@ -59,6 +62,7 @@ public class PetStoreRestController {
     private List<User> listUsers(){
         return this.userServiceImp.listAll();
     }
+    //For each user it tries to buy a random pet
     @GetMapping("/buy")
     private List<Pet> buy(){
         List<User> users = this.userServiceImp.listAll();
@@ -81,7 +85,8 @@ public class PetStoreRestController {
         historyLog.add(transaction);
         return this.petServiceImp.listAll();
     }
-
+     //Shows the history of all the transactions done with the
+    //buy method
     @GetMapping("/history")
     private String getHistory(){
         StringBuilder sb= new StringBuilder();
@@ -95,6 +100,7 @@ public class PetStoreRestController {
 
     // PET METHODS
 
+    //Creates 20 pets with random names and type
     @GetMapping("/createPets")
     private List<Pet> createPets(){
         List<Type> petType = List.of(Type.values());
