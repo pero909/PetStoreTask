@@ -11,7 +11,7 @@ Run:
  3.http://localhost:8080/api/listUsers
  4.http://localhost:8080/api/listPets
  
- these methods show a list of the pet and users created
+ these methods show a list of the pets and users created
  
 4.http://localhost:8080/api/history
 Shows all buy transactions that were executed
