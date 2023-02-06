@@ -8,6 +8,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -35,6 +36,7 @@ public class User {
         this.lastName = lastName;
         this.email = email;
         this.budget = budget;
+        this.pets=new ArrayList<>();
     }
 
     public User() {

@@ -59,7 +59,7 @@ public class PetStoreRestController {
         this.userServiceImp.deleteAllUsers();
     }
 
-    //Lists all the users int the database
+    //Lists all the users in the database
     @GetMapping("/listUsers")
     private List<User> listUsers(){
         return this.userServiceImp.listAll();
